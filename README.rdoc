@@ -1,0 +1,8 @@
+== Debate Cards
+
+This is a web app that tracks debate evidence. Ideally, it is meant to be a single place where a team can digitally store its evidence
+
+Features
+--------
+- User can enter cards
+- User can view cards
