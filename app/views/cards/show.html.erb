@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tag:</b>
+  <%= @card.tag %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @card.author %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @card.date %>
+</p>
+
+<p>
+  <b>Evidence:</b>
+  <%= @card.evidence %>
+</p>
+
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>
