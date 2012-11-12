@@ -19,7 +19,7 @@ Feature: User authentication
     And I fill in "example@example.com" for "Email"
     And I fill in "foobar" for "Password"
     And I fill in "foobar" for "Password confirmation"
-    And I click "Sign up"
+    And I click "Submit"
     Then I should see "Welcome! You have signed up successfully."
 
   Scenario: Signing up with non-matching passwords
@@ -28,7 +28,7 @@ Feature: User authentication
     And I fill in "example@example.com" for "Email"
     And I fill in "foobar" for "Password"
     And I fill in "notfoobar" for "Password confirmation"
-    And I click "Sign up"
+    And I click "Submit"
     Then I should see "Password doesn't match confirmation"
 
   Scenario: Logging in
@@ -48,7 +48,7 @@ Feature: User authentication
     And I fill in "foobar" for "Password"
     And I click "Sign in"
     Then I should see "Incorrect email or password"
-    And the "Email" field should contain "eliza@example.com"
+    And the "Email" field should contain "example@example.com"
 
   Scenario: Logging out
     Given I am signed in

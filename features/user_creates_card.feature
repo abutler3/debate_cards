@@ -8,14 +8,13 @@ Acceptance Criteria:
   * Card must be publicly visible once saved
 
 Scenario: User attempts to enter a card
-  Given I am on the homepage
-  And I click "New Card"
-  Then I should "Fill in your card here"
+  Given I am signed in
+  And I am on the homepage
+  When I click "New Card"
+  Then I should see "Enter New Card"
   When I fill in "Economic Decline Causes War" for "Tag"
   And I fill in "Walter Russell Mead" for "Author"
-  And I fill in "Senior Fellow for U.S. Foreign Policy at the Council on Foreign Relations" for "Credentials"
   And I fill in "August 23, 1998" for "Date"
-  And I fill in "Los Angeles Times" for "Publication"
   And I fill in "But the biggest impact of the Depression on the United States--and on world history--wasn't money. It was blood: World War II, to be exact." for "Evidence"
-  And I press "Save"
-  Then I should see "Your card has been entered"
+  And I press "Create Card"
+  Then I should see "Card was successfully created"

@@ -4,10 +4,10 @@ class CardsController < ApplicationController
   def index
     @cards = Card.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @cards }
-    end
+    # respond_to do |format|
+    #   format.html # index.html.erb
+    #   format.json { render json: @cards }
+    # end
   end
 
   # GET /cards/1
