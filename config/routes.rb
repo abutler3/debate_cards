@@ -1,5 +1,7 @@
 DebateCard::Application.routes.draw do
 
+  devise_for :users
+
   resources :cards
 
   get "home/index"
