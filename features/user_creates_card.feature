@@ -16,5 +16,6 @@ Scenario: User attempts to enter a card
   And I fill in "Senior Fellow for U.S. Foreign Policy at the Council on Foreign Relations" for "Credentials"
   And I fill in "August 23, 1998" for "Date"
   And I fill in "Los Angeles Times" for "Publication"
+  And I fill in "But the biggest impact of the Depression on the United States--and on world history--wasn't money. It was blood: World War II, to be exact." for "Evidence"
   And I press "Save"
   Then I should see "Your card has been entered"
