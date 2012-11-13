@@ -1,11 +1,11 @@
-Given /^there is a blog post$/ do
-  step %{1 blog post}
+Given /^there is a card$/ do
+  step %{1 card}
 end
 
-Given /^I am viewing that blog post$/ do
-  step %{I am on that blog post's page}
+Given /^I am viewing that card $/ do
+  step %{I am on that card's page}
 end
 
-Then /^I should be viewing that blog post$/ do
-  step %{I should be on that blog post's page}
+Then /^I should be viewing that card $/ do
+  step %{I should be on that card's page}
 end

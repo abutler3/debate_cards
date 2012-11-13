@@ -1,25 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+  <h2><%= @card.tag %></h2>
+
 <p>
-  <b>Tag:</b>
-  <%= @card.tag %>
+  <%= @card.author %> in <%= @card.date %>
 </p>
 
 <p>
-  <b>Author:</b>
-  <%= @card.author %>
-</p>
-
-<p>
-  <b>Date:</b>
-  <%= @card.date %>
-</p>
-
-<p>
-  <b>Evidence:</b>
   <%= @card.evidence %>
 </p>
 
 
 <%= link_to 'Edit', edit_card_path(@card) %> |
-<%= link_to 'Back', cards_path %>
+<%= link_to 'Index', cards_path %>

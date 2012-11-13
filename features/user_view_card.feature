@@ -1,22 +1,20 @@
 Feature: User view card list
 
   Scenario:
-    Given the following posts:
-      | tag   | author       |
-      | Foo   | Foo Bar      |
-      | Hello | Hello, World |
-    When I go to the homepage
-    Then I should see the title "Foo"
-    And I should see "Bar"
-    And I should see the title "Hello"
-    And I should see "World"
+    Given the following card:
+      | tag      | Foo     |
+      | evidence | Foo Bar |
+    And I am on the homepage
+    When I click "Cards Index"
+    Then I should see the tag "Foo"
+    And I should see "Foo Bar"
 
-  Scenario: Linking to/from post show page
-    Given the following post:
+  Scenario: Linking to/from card show page
+    Given the following card:
       | tag    | Foo     |
       | author | Foo Bar |
     And I am on the homepage
+    When I click "Cards Index"
+    Then I should see the tag "Foo"
     When I click "Foo"
     Then I should be on that card's page
-    When I click "View All Cards"
-    Then I should be on the homepage

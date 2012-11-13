@@ -3,42 +3,21 @@ class CardsController < ApplicationController
   # GET /cards.json
   def index
     @cards = Card.all
-
-    # respond_to do |format|
-    #   format.html # index.html.erb
-    #   format.json { render json: @cards }
-    # end
   end
 
-  # GET /cards/1
-  # GET /cards/1.json
   def show
     @card = Card.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @card }
-    end
   end
 
-  # GET /cards/new
-  # GET /cards/new.json
   def new
     @card = Card.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @card }
-    end
   end
 
-  # GET /cards/1/edit
   def edit
     @card = Card.find(params[:id])
   end
 
-  # POST /cards
-  # POST /cards.json
   def create
     @card = Card.new(params[:card])
 

@@ -10,7 +10,7 @@ Then /^I should not see "(.*?)"$/ do |expected_text|
   page.should_not have_content(expected_text)
 end
 
-Then /^I should see the title "(.*?)"$/ do |title_text|
+Then /^I should see the tag "(.*?)"$/ do |title_text|
   page.should have_css("h1, h2", text: title_text)
 end
 
