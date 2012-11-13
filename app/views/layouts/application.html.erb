@@ -12,13 +12,36 @@
       <div class="container">
         <a href="#" class="brand">Debate Card</a>
         <ul class="nav">
-          <li><%= link_to "New Card", new_card_path %></li>
-          <li></li>
+          <li><%= link_to "Home", root_path %></li>
+        </ul>
+        <ul class="nav pull-right">
+          <% if user_signed_in? %>
+            <li><%= link_to current_user.email, edit_user_registration_path %></li>
+            <li><%= link_to "View All Cards", cards_path %></li>
+            <li><%= link_to "New Card", new_card_path %></li>
+            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+  </li>
+          <% else %>
+            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            <li><%= link_to "Log In", new_user_session_path %></li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>
   <div class="container">
-       <p class="alert"><%= alert %></p>
+    <% if flash[:notice] %>
+      <div class="alert alert-info">
+        <button class="close" data-dismiss="alert">x</button>
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-error">
+        <button class="close" data-dismiss="alert">x</button>
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
       <%= yield %>
   </div>
 </body>
