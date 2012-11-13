@@ -7,8 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a href="#" class="brand">Debate Card</a>
+        <ul class="nav">
+          <li><%= link_to "New Card", new_card_path %></li>
+          <li></li>
+      </div>
+    </div>
+  </div>
+  <div class="container">
        <p class="alert"><%= alert %></p>
-<%= yield %>
-
+      <%= yield %>
+  </div>
 </body>
 </html>

@@ -1,13 +1,28 @@
-<h1>All cards</h1>
-<%= link_to 'New Card', new_card_path %>
+<div class="page-header">
+  <h1>All cards</h1>
+</div>
 
+<%= link_to 'Create a New Card', new_card_path, class: "btn btn-success" %>
 
 <% @cards.each do |card| %>
+  <div class="card">
+  <div class="tag">
     <h2><%= link_to card.tag, card %></h2>
-    <p><%= card.author %> in <%= card.date %></td>
+  </div>
+  <div class="author">
+    <p><%= card.author %> in <%= card.date %></p>
+  </div>
+  <div class="evidence">
     <p><%= card.evidence %></p>
-    <%= link_to 'Edit', edit_card_path(card) %></td>
-    <%= link_to 'Delete', card, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+  <div class="meta">
+    <%= link_to "Card posted " + time_ago_in_words(card.created_at) + " ago", card %>
+    <span class="admin">
+      | <%= link_to 'Edit', edit_card_path(card) %> |
+      <%= link_to 'Delete', card, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </span>
+  </div>
+</div>
 <% end %>
 
 <br />
