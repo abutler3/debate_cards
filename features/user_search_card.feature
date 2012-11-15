@@ -1,13 +1,21 @@
 
 Feature: Search
+  As a User
+  In order to find content easily
+  I want to search for content
+
+  Background:
+   Given I am on the home page
+
   Scenario: Find cards by content
-  Given a User has posted the following cards:
-  | card |
-  | I am making dinner |
-  | I just woke up     |
-  | I am going to work |
-  When I search for "I am"
-  Then the results should be:
-  | content            |
-  | I am making dinner |
-  | I am going to work |
+    Given the following cards:
+      | evidence          |
+      | Demon in a Bottle |
+      | Extremis          |
+    When I search for "Demon"
+    And I should see "Demon in a Bottle"
+    But I should not see "Extremis"
+
+  Scenario: No posts found
+    When I search for "Armor Wars"
+    And I should see "No cards were found"

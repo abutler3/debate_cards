@@ -26,6 +26,12 @@
             <li><%= link_to "Log In", new_user_session_path %></li>
           <% end %>
         </ul>
+<form class="navbar-search pull-left">
+<%= form_tag cards_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
+</form>
       </div>
     </div>
   </div>
