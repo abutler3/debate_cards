@@ -2,11 +2,7 @@ class CardsController < ApplicationController
   # GET /cards
   # GET /cards.json
   def index
-    if params[:search]
-      @cards = Card.find(:all, :conditions => ['evidence LIKE ?', "%#{params[:search]}%"])
-    else
-      @cards = Card.find(:all)
-    end
+    @cards = Card.search(params[:search])
   end
 
   def show

@@ -18,4 +18,23 @@ Feature: Search
 
   Scenario: No posts found
     When I search for "Armor Wars"
-    And I should see "No cards were found"
+    And I should see "No cards found. Please try another search."
+
+  Scenario: Find cards by author
+    Given the following cards:
+        | author  |
+        | Zizek   |
+        | Leonard |
+      When I search for "Zizek"
+      And I should see "Zizek"
+      But I should not see "Leonard"
+
+    Scenario: Find cards by tag
+      Given the following cards:
+          | tag       |
+          | Warming   |
+          | Weapons   |
+        When I search for "Weapons"
+        And I should see "Weapons"
+        But I should not see "Warming"
+

@@ -28,8 +28,8 @@
         </ul>
 <form class="navbar-search pull-left">
 <%= form_tag cards_path, :method => 'get' do %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Search", :name => nil %>
+  <%= text_field_tag :search, params[:search], :class => 'search-query' %>
+<%= submit_tag "Search", :name => nil %>
 <% end %>
 </form>
       </div>
@@ -48,7 +48,9 @@
         <%= flash[:alert] %>
       </div>
     <% end %>
-      <%= yield %>
+
+        <%= yield %>
+
   </div>
 </body>
 </html>
