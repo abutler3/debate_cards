@@ -5,7 +5,7 @@ class Card < ActiveRecord::Base
 
   def self.search(search)
     if search
-      find(:all, :conditions => ['evidence LIKE ?', "%#{search}%"])
+      find(:all, :conditions => ['evidence @@ ?', search])
     else
       find(:all)
     end
