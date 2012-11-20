@@ -15,6 +15,33 @@
                                 class: "btn btn-large" %>
 </div>
 
+<% if (@cards) %>
+      <% if (@cards.empty?) %>
+        <p>No cards found. Please try another search.</p>
+      <% else %>
+    <% @cards.each do |card| %>
+      <div class="card">
+      <div class="tag">
+        <h2><%= link_to card.tag, card %></h2>
+      </div>
+      <div class="author">
+        <p><strong><%= card.author %> in <%= card.date %></strong></p>
+      </div>
+      <div class="evidence">
+        <p><%= card.evidence %></p>
+      </div>
+      <div class="meta">
+        <%= link_to "Card posted " + time_ago_in_words(card.created_at) + " ago", card %>
+        <span class="admin">
+          | <%= link_to 'Edit', edit_card_path(card) %> |
+          <%= link_to 'Delete', card, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </span>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+<% end %>
+
 <% else %>
 
 <div class="center hero-unit">
