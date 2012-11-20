@@ -1,3 +1,22 @@
+
+<% if user_signed_in? %>
+  <div class="center hero-unit">
+    <h1>Welcome <%= current_user.email %></h1>
+
+    <h2>
+      Click one of the buttons below to continue
+    </h2>
+
+    <%= link_to "View Backfiles", cards_path,
+                                class: "btn btn-large" %>
+    <%= link_to "Search", new_search_path,
+                                class: "btn btn-large" %>
+    <%= link_to "Create Card", new_card_path,
+                                class: "btn btn-large" %>
+</div>
+
+<% else %>
+
 <div class="center hero-unit">
     <h1>Debate Cards</h1>
 
@@ -18,4 +37,6 @@
   <%= link_to "Sign Up", new_user_registration_path %>
   <%= link_to "Sign In", new_user_session_path %>
 <%- end %>
+
+<% end %>
 
