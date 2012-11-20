@@ -4,6 +4,8 @@ def path_to(page_name)
     '/'
   when "that card's page"
     card_path(@card)
+  when "the card index page"
+    cards_path
   else
     raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
       "Now, go and add a mapping in #{__FILE__}"
