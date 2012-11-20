@@ -4,12 +4,12 @@ Feature: User authentication
     Given I am on the homepage
     Then I should see "Sign In"
     And I should see "Sign Up"
-    And I should not see "Sign Out"
+    And I should not see "Log Out"
 
   Scenario: Signed in users see appropriate links
     Given I am signed in
     And I am on the homepage
-    Then I should see "Sign Out"
+    Then I should see "Log Out"
     And I should not see "Sign In"
     And I should not see "Sign Up"
 
@@ -53,5 +53,5 @@ Feature: User authentication
   Scenario: Logging out
     Given I am signed in
     And I am on the homepage
-    When I click "Sign Out"
+    When I click "Log Out"
     Then I should see "You are now signed out."

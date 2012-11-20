@@ -6,6 +6,7 @@ Feature: Search
 
   Background:
    Given I am on the home page
+   And I am signed in
 
   Scenario: Find cards by content
     Given the following cards:
