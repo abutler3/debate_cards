@@ -5,8 +5,7 @@ Feature: Search
   I want to search for content
 
   Background:
-   Given I am on the home page
-   And I am signed in
+    Given I am on the card index page
 
   Scenario: Find cards by content
     Given the following cards:
