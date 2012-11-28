@@ -4,7 +4,11 @@ class CardsController < ApplicationController
   # GET /cards
   # GET /cards.json
   def index
-    @cards = Card.search(params[:search])
+    if params[:cat]
+      @cards = Card.tagged_with(params[:cat])
+    else
+      @cards = Card.search(params[:search])
+    end
   end
 
   def show

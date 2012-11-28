@@ -1,5 +1,6 @@
 class Card < ActiveRecord::Base
-  attr_accessible :author, :date, :evidence, :tag
+  attr_accessible :author, :date, :evidence, :tag, :tag_list
+  acts_as_taggable
 
   validates_presence_of :tag, :evidence
 

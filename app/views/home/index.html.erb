@@ -13,34 +13,7 @@
                                 class: "btn btn-large" %>
     <%= link_to "Create Card", new_card_path,
                                 class: "btn btn-large" %>
-</div>
-
-<% if (@cards) %>
-      <% if (@cards.empty?) %>
-        <p>No cards found. Please try another search.</p>
-      <% else %>
-    <% @cards.each do |card| %>
-      <div class="card">
-      <div class="tag">
-        <h2><%= link_to card.tag, card %></h2>
-      </div>
-      <div class="author">
-        <p><strong><%= card.author %> in <%= card.date %></strong></p>
-      </div>
-      <div class="evidence">
-        <p><%= card.evidence %></p>
-      </div>
-      <div class="meta">
-        <%= link_to "Card posted " + time_ago_in_words(card.created_at) + " ago", card %>
-        <span class="admin">
-          | <%= link_to 'Edit', edit_card_path(card) %> |
-          <%= link_to 'Delete', card, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </span>
-      </div>
-    </div>
-    <% end %>
-  <% end %>
-<% end %>
+  </div>
 
 <% else %>
 
@@ -54,6 +27,64 @@
     <%= link_to "Sign up now!", new_user_registration_path,
                                 class: "btn btn-large btn-primary" %>
 </div>
+<div class="container marketing">
+  <div class="row">
+    <div class="span4">
+      <%= image_tag("o.jpg", :alt => "organize", class: 'img-circle') %>
+      <h2>Organize</h2>
+      <p>Centralize and backup your evidence backfiles in the cloud. Make sure everyone on the teams has access to the same evidence. Prevents constant duplication of files.</p>
+      <p><a class="btn" href="#">View details &raquo;</a></p>
+    </div>
+    <div class="span4">
+      <%= image_tag("p.jpg", :alt => "paperless", class: 'img-circle') %>
+      <h2>Paperless</h2>
+      <p>Truly become a part of the paperless debate movement. Most of the paper waste in debate is due to the consistent cutting and copying and recopying evidence.</p>
+      <p><a class="btn" href="#">View details &raquo;</a></p>
+    </div>
+    <div class="span4">
+      <%= image_tag("e.jpg", :alt => "economics", class: 'img-circle') %>
+      <h2>Economics</h2>
+      <p>For travelling debate teams, paper backfiles need to be checked on planes. With the additional airline carryon fee, it could reach between $2,000 to $4,000 a year.</p>
+      <p><a class="btn" href="#">View details &raquo;</a></p>
+    </div>
+  </div>
+<hr class="featurette-divider">
+
+      <div class="featurette">
+        <%= image_tag("thumbdrive.jpg", :alt => "thumbdrive", class: 'featurette-image pull-right') %>
+        <h2 class="featurette-heading">Why not use thumbdrives? <span class="muted">Great question</span></h2>
+        <p class="lead">They can get lost or stolen. What happens if a team loses their thumbdrive and can't find a replacement. They are going to lose. Also, thumbdrives can get deleted or corrupted. Let's not even talk about the risk for viruses.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <%= image_tag("traveltub.jpg", :alt => "thumbdrive", class: 'featurette-image pull-left') %>
+        <h2 class="featurette-heading">Can an entire tournament use it? <span class="muted">Sure!</span></h2>
+        <p class="lead">A school can hold a tournament where each team use the same information to even the playing field. Each team can have an account to log in and see the evidence to create their arguments.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <%= image_tag("debateos.jpg", :alt => "debateOS", class: 'featurette-image pull-right') %>
+        <h2 class="featurette-heading">Can I use DebateOS <span class="muted">Okay.</span></h2>
+        <p class="lead">DebateOS is a Linux OS using open-source software designed specifically for debaters. Because Debate Card is a web app, you would be able to access it on Linux, Mac, or Windows.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <%= image_tag("tuberow.jpg", :alt => "tub row", class: 'featurette-image pull-left') %>
+        <h2 class="featurette-heading">Everything public? <span class="muted">Yes</span></h2>
+        <p class="lead">All logged in users can create cards and view all of the cards in one place. The biggest reason is to encourage public knowledge and increase the availablity of quality evidence in the activity. Teams needing privacy will be able to install Debate Card on their private server for the most secure experience.</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+</div>
+
+
 <h1>Debate Cards</h1>
 <p>My future home</p>
 <%= link_to "Cards Index", cards_path %>

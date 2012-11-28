@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>All cards</h1>
+  <h1>Evidence</h1>
 </div>
 
 <%= form_tag cards_path, :method => 'get' do %>
@@ -9,9 +9,15 @@
 
 
 <p>Can't find what you're looking for? Try <%= link_to "Advanced Search", new_search_path %></p>
-
+<p>Filter by category</p>
+<div class="cat_list">
+  <% tag_cloud Card.tag_counts, %w[s m l] do |tag, css_class|  %>
+    <%= link_to tag.name, cat_path(tag.name), class: css_class %>
+  <% end %>
+</div>
+<div class="button">
 <%= link_to 'Create a New Card', new_card_path, class: "btn btn-success" %>
-
+</div>
   <% if (@cards) %>
       <% if (@cards.empty?) %>
         <p>No cards found. Please try another search.</p>
@@ -29,6 +35,7 @@
       </div>
       <div class="meta">
         <%= link_to "Card posted " + time_ago_in_words(card.created_at) + " ago", card %>
+        <p>Listed under: <%= raw card.tag_list.map { |t| link_to t, cat_path(t) }.join(', ') %>
         <span class="admin">
           | <%= link_to 'Edit', edit_card_path(card) %> |
           <%= link_to 'Delete', card, method: :delete, data: { confirm: 'Are you sure?' } %>

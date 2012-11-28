@@ -1,5 +1,5 @@
 DebateCard::Application.routes.draw do
-
+  get 'tags/:cat', to: 'cards#index', as: :cat
   devise_for :users
 
   resources :cards
