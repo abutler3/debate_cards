@@ -1,22 +1,32 @@
-<div class="page-header">
-  <h1>Evidence</h1>
-</div>
-
-<%= form_tag cards_path, :method => 'get' do %>
+<div class="container">
+<div class="row">
+  <div class="span4">
+<%= form_tag cards_path, :method => 'get', class: 'form-search' do %>
   <%= text_field_tag :search, params[:search] %>
   <%= submit_tag "Search", :name => nil %>
 <% end %>
-
-
 <p>Can't find what you're looking for? Try <%= link_to "Advanced Search", new_search_path %></p>
-<p>Filter by category</p>
-<div class="cat_list">
-  <% tag_cloud Card.tag_counts, %w[s m l] do |tag, css_class|  %>
-    <%= link_to tag.name, cat_path(tag.name), class: css_class %>
-  <% end %>
+  </div>
+
+  <div class="span4">
+    <h3>Filter by category</h3>
+    <div class="cat_list">
+        <% tag_cloud Card.tag_counts, %w[s m l] do |tag, css_class|  %>
+        <%= link_to tag.name, cat_path(tag.name), class: css_class %>
+        <% end %>
+    </div>
+  </div>
+
+  <div class="span4">
+    <div class="button">
+      <%= link_to 'Create a New Card', new_card_path, class: "btn btn-success" %>
+    </div>
+  </div>
+
 </div>
-<div class="button">
-<%= link_to 'Create a New Card', new_card_path, class: "btn btn-success" %>
+</div>
+<div class="page-header">
+  <h1>Evidence</h1>
 </div>
   <% if (@cards) %>
       <% if (@cards.empty?) %>

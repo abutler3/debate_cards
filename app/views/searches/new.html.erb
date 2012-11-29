@@ -1,21 +1,36 @@
 <h1>Advanced Search</h1>
+<div class="container">
+  <div class="row">
+    <div class="span6">
+      <%= form_for @search do |f| %>
+        <div class="field">
+          <%= f.label :keywords %><br />
+          <%= f.text_field :keywords %>
+        </div>
+        <div class="field">
+          <%= f.label :tag %><br />
+          <%= f.text_field :tag %>
+        </div>
+        <div class="field">
+          <%= f.label :author %><br />
+          <%= f.text_field :author %>
+        </div>
+        <div class="field">
+          <%= f.label :year %><br />
+          <%= f.text_field :year %>
+        </div>
+        <div class="actions"><%= f.submit "Search" %></div>
+      <% end %>
+    </div>
 
-<%= form_for @search do |f| %>
-  <div class="field">
-    <%= f.label :keywords %><br />
-    <%= f.text_field :keywords %>
+    <div class="span6">
+      <div class="sidebar">
+        <h2>Instructions</h2>
+        <p>Keywords - Search inside a piece of evidence</p>
+        <p>Tag - Search inside a tag</p>
+        <p>Year - Search for cards in a specific year</p>
+        <p>Author - Search for cards with a specific author</p>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :tag %><br />
-    <%= f.text_field :tag %>
-  </div>
-  <div class="field">
-    <%= f.label :author %><br />
-    <%= f.text_field :author %>
-  </div>
-  <div class="field">
-    <%= f.label :year %><br />
-    <%= f.text_field :year %>
-  </div>
-  <div class="actions"><%= f.submit "Search" %></div>
-<% end %>
+</div>
+

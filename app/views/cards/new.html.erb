@@ -1,5 +1,17 @@
 <h1>Enter New Card</h1>
+<div class="container">
+  <div class="row">
+    <div class="span6">
+      <%= render 'form' %>
 
-<%= render 'form' %>
+      <%= link_to 'Back', cards_path %>
+    </div>
+    <div class="span6">
+      <div class="sidebar">
+        <h2>Instructions</h2>
+        <p>Make sure you include all of the information listed. Including the tag. Also do a search for the card before you entering a new card.</p>
+        <%= image_tag("index1.jpg", :alt => "index card") %>
 
-<%= link_to 'Back', cards_path %>
+    </div>
+  </div>
+</div>

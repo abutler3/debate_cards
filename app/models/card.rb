@@ -3,6 +3,7 @@ class Card < ActiveRecord::Base
   acts_as_taggable
 
   validates_presence_of :tag, :evidence
+  validates :evidence, :uniqueness => true
 
   def self.search(search)
     if search

@@ -51,3 +51,5 @@ end
 # gem 'debugger'
 
 gem 'acts-as-taggable-on'
+
+gem 'kaminari'
